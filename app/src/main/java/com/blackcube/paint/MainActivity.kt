@@ -33,7 +33,6 @@ import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
 
-    @OptIn(ExperimentalComposeUiApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,7 +40,6 @@ class MainActivity : ComponentActivity() {
             val colors = listOf(Color.Black, Color.Blue, Color.Green, Color.Yellow, Color.Red, Color.LightGray)
 
             Column {
-                ///////////////////////////////  ЕСЛИ УСПЕЕМ  //////////////////////////////////////
                 var selectedColor by remember { mutableStateOf(colors.first()) }
                 Row(
                     modifier = Modifier
@@ -62,17 +60,12 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                 }
-                ///////////////////////////////  ЕСЛИ УСПЕЕМ  //////////////////////////////////////
 
-                ///////////////////////////////  ОБЯЗАТЕЛЬНО  //////////////////////////////////////
                 DrawingScreen()
-                ///////////////////////////////  ОБЯЗАТЕЛЬНО  //////////////////////////////////////
             }
         }
     }
 
-    ///////////////////////////////  ОБЯЗАТЕЛЬНО  //////////////////////////////////////
-    @ExperimentalComposeUiApi
     @Composable
     fun DrawingScreen() {
         // Объявляем переменную состояния для хранения точек, по которым проведёт пользователь
